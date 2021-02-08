@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load bootstrap4 %}
+
+{% block content %}
+
+  <div class="d-flex justify-content-center" style="width: 300;">
+    <form method="post" action="{% url 'profile:login' %}">
+      {% csrf_token %}
+      {% bootstrap_form form %}
+      <div class="d-flex justify-content-center" style="padding-top: 10px;">
+      <input class="btn btn-primary" type="submit" value="login" />
+      </div>
+    </form>
+    <p><a href="#">Reset Password</a></p>
+  </div>
+
+{% endblock %}

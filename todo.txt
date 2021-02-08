@@ -1,0 +1,36 @@
+Questions{
+
+}
+
+Specs: Twitter Project
+apps{
+    account{
+        email,
+        username,
+        password,
+        protected,
+    },
+    follow{
+        followers,
+        following,
+        follow(),
+        unfollow(),
+        block(),
+        block list model,
+    },
+    twit{
+        body,
+        time stamp,
+        like,
+        share,
+        comment,
+    },
+    messages{
+        time stamp,
+    }
+}
+
+TODO{
+    DONE create custom user model
+         create authentication system
+}

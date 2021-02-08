@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load bootstrap4 %}
+{% load static %}
+{% block content %}
+    <p>username: {{profile.username}}</p>
+    {% if profile == user or not profile.hide_email %}
+        <p>email: {{profile.email}}</p>
+    {% endif %}
+    {% if profile.is_active %}
+        <p>profile is activeted</p>
+    {% else %}
+        <p>profile is not activated</p>
+    {% endif %}
+    {% if profile.profile_image %}
+        <p>profile image</p>
+        <img src="{{profile.profile_image.url}}"
+    {% endif %}
+    {% if profile.cover_image %}
+        <p>cover image</p>
+        <img src="{{profile.cover_image.url}}"
+    {% endif %}
+    <p>joined at: {{profile.date_joined}}</p>
+
+    {% if profile == user %}
+        <a href="{% url 'profile:profile_edit' %}"><button class="btn btn-primary" type="button">update profile</button></a>
+    {% endif %}
+{% endblock content %}
